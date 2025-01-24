@@ -85,14 +85,12 @@ const plans: Plan[] = [
 ]
 
 const SubscriptionPlans: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
           observer.unobserve(entry.target)
         }
       },
@@ -196,7 +194,7 @@ const SubscriptionPlans: React.FC = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth="2"
-                        d={feature.included ? "M5 13l4 4L19 7" : "M6 18L18 6M6 6l12 12"}
+                        d={feature.included ? "M5 13l4 4L19 7" : "M6 18L18 6M6 6l12 12" }
                       />
                     </svg>
                     {feature.text}
@@ -217,4 +215,3 @@ const SubscriptionPlans: React.FC = () => {
 }
 
 export default SubscriptionPlans
-
