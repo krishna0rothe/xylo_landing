@@ -50,7 +50,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p className="text-lg text-gray-300 max-w-lg" variants={fadeInUp}>
-            Simplify game creation, marketing, and monetization. Focus on creating great games while we handle
+            Simplify game creation, and  marketing, and monetization. Focus on creating great games while we handle
             everything else.
           </motion.p>
 
