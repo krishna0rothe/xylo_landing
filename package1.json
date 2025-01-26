@@ -1,21 +1,16 @@
 {
-  "homepage": "https://krishna0rothe.github.io/xylo_landing",
-  "name": "xylo_landing",
+  "name": "frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "start": "react-scripts start",
-    "lint": "eslint .",
     "build": "tsc -b && vite build",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/styled": "^11.14.0",
-    "gh-pages": "^6.3.0",
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

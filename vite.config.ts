@@ -4,11 +4,9 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [react()],
-  base: '/xylo_home/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-
     },
   },
 })

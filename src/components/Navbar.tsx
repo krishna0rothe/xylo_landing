@@ -18,6 +18,7 @@ interface DropdownItem {
 
 interface MobileNavItemProps {
   text: string
+  items?: DropdownItem[]
 }
 
 // Status indicator component
@@ -157,9 +158,9 @@ function NavItem({ text, hasDropdown, items = [] }: NavItemProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute left-0 mt-2 w-[600px] p-4 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/80 rounded-lg border border-gray-800 shadow-xl"
+              className="absolute left-0 mt-2 w-[600px] p-4 bg-black/80 backdrop-blur-2xl supports-[backdrop-filter]:bg-black/60 rounded-lg border border-gray-800 shadow-xl"
             >
-              <div className="grid grid-cols-5 gap-4">
+              <div className="grid grid-cols-5  gap-4">
                 <div className="col-span-2 space-y-4">
                   {items.map((item) => (
                     <div
@@ -175,7 +176,7 @@ function NavItem({ text, hasDropdown, items = [] }: NavItemProps) {
                     </div>
                   ))}
                 </div>
-                <div className="col-span-3 p-4 bg-gray-800/30 rounded-lg">
+                <div className="col-span-3 p-4 bg-gray-800/50 backdrop-blur-sm rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
                     <h4 className="text-white font-medium">{activeItem?.title}</h4>
                     <StatusDot status={activeItem?.status} />
@@ -198,11 +199,34 @@ function NavItem({ text, hasDropdown, items = [] }: NavItemProps) {
 }
 
 // MobileNavItem Component
-function MobileNavItem({ text }: MobileNavItemProps) {
+function MobileNavItem({ text, items = [] }: MobileNavItemProps) {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <a href="#" className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition-colors">
-      {text}
-    </a>
+    <div>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition-colors"
+      >
+        <span>{text}</span>
+        {items.length > 0 && (
+          <ChevronDown size={16} className={`transform transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        )}
+      </button>
+      {isOpen && items.length > 0 && (
+        <div className="pl-6 space-y-2">
+          {items.map((item) => (
+            <a
+              key={item.title}
+              href="#"
+              className="block py-1 text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              {item.title}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -291,13 +315,13 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden max-h-[calc(100vh-3.5rem)] overflow-y-auto"
           >
             <div className="space-y-1 px-4 pb-3 pt-2">
-              <MobileNavItem text="Products" />
-              <MobileNavItem text="Solutions" />
-              <MobileNavItem text="Resources" />
+              <MobileNavItem text="Products" items={productItems} />
+              <MobileNavItem text="Solutions" items={solutionItems} />
+              <MobileNavItem text="Resources" items={resourceItems} />
               <MobileNavItem text="Enterprise" />
               <MobileNavItem text="Docs" />
               <MobileNavItem text="Pricing" />

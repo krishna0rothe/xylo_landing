@@ -54,7 +54,7 @@ const plans: Plan[] = [
     price: "$49/month",
     description: "Studios or advanced developers scaling operations.",
     features: [
-      { text: "Host up to 15 games with 50GB storage each", included: true },
+      { text: "Host up to 10 games with 50GB storage each", included: true },
       { text: "Advanced piracy protection for all games", included: true },
       { text: "Access to global monetization tools", included: true },
       { text: "Unlimited NFT integration for unique game assets", included: true },
@@ -194,7 +194,7 @@ const SubscriptionPlans: React.FC = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth="2"
-                        d={feature.included ? "M5 13l4 4L19 7" : "M6 18L18 6M6 6l12 12" }
+                        d={feature.included ? "M5 13l4 4L19 7" : "M6 18L18 6M6 6l12 12"}
                       />
                     </svg>
                     {feature.text}
@@ -215,3 +215,4 @@ const SubscriptionPlans: React.FC = () => {
 }
 
 export default SubscriptionPlans
+

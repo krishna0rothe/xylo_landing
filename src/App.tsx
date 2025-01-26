@@ -5,7 +5,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/xylo_home" element={<LandingPage />} />  
+        <Route path="/xylo_landing/" element={<LandingPage />} />  
       </Routes>
     </Router>
   )

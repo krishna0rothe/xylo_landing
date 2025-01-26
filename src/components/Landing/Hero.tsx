@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { services } from "@/data/services"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { services } from "@/data/services";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
-}
+};
 
 const stagger = {
   animate: {
@@ -17,19 +17,19 @@ const stagger = {
       staggerChildren: 0.1,
     },
   },
-}
+};
 
 export default function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
-  const currentService = services[currentIndex]
+  const currentService = services[currentIndex];
 
   return (
     <div
@@ -40,18 +40,28 @@ export default function Hero() {
     >
       <div className="container relative mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Column - Content */}
-        <motion.div initial="initial" animate="animate" variants={stagger} className="space-y-6">
-          <motion.h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white" variants={fadeInUp}>
-            Your All-in-One
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={stagger}
+          className="space-y-6"
+        >
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold tracking-tight text-white"
+            variants={fadeInUp}
+          >
+            Your Partner in
             <motion.span className="text-gray-00 block" variants={fadeInUp}>
-              Game Development
+              Building the Next
             </motion.span>
-            Platform
+            Gaming Masterpiece
           </motion.h1>
 
-          <motion.p className="text-lg text-gray-300 max-w-lg" variants={fadeInUp}>
-            Simplify game creation, and  marketing, and monetization. Focus on creating great games while we handle
-            everything else.
+          <motion.p
+            className="text-lg text-gray-300 max-w-lg"
+            variants={fadeInUp}
+          >
+           Take your game to the next level with Xylo. From seamless publishing and marketing to easy monetization options, our platform takes care of the rest, letting you focus on what truly matters creating unforgettable games.
           </motion.p>
 
           <motion.div className="flex flex-wrap gap-4" variants={fadeInUp}>
@@ -68,7 +78,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Explore Features
+              Explore Services
             </motion.button>
           </motion.div>
 
@@ -96,7 +106,7 @@ export default function Hero() {
                 className="rounded-lg border border-gray-800 bg-gray-900 shadow-2xl overflow-hidden"
               >
                 <motion.img
-                  src={currentService.image || "/placeholder.svg"}
+                  src={currentService.image}
                   alt={`${currentService.title} Preview`}
                   className="rounded-lg w-full h-full object-cover"
                   animate={{
@@ -143,6 +153,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-

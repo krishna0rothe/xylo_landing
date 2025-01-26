@@ -70,21 +70,21 @@ const Footer: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
                   >
-                    John Doe - Lead Developer
+                    Krushna Rothe
                   </motion.li>
                   <motion.li
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.2 }}
                   >
-                    Jane Smith - UI/UX Designer
+                    Smit Patel 
                   </motion.li>
                   <motion.li
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.3 }}
                   >
-                    Mike Johnson - Backend Engineer
+                    Nirant Chavda
                   </motion.li>
                 </ul>
               </motion.div>
@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              <p>&copy; 2023 GameDev Platform. All rights reserved.</p>
+              <p>&copy; 2025   GameDev Platform. All rights reserved.</p>
             </motion.div>
           </Parallax>
         </div>

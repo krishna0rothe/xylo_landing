@@ -1,25 +1,59 @@
+import GameDevelopment from "../assets/services/GameDevelopment.png";
+import SecureDistrinution from "../assets/services/Secure Distribution.png";
+import Monetization from "../assets/services/GameMonetization.png";
+import Markting from "../assets/services/Marketing & Publishing.png";
+import Baas from "../assets/services/Baas.png";
+import ResourceMarketplace from "../assets/services/ResourceMarketplace.png";
+import NFT from "../assets/services/NFTIntegration.png";
+import FreeLance from "../assets/services/FreelanceHub.png";
+
 export const services = [
-    {
-      title: "Game Development",
-      oneLiner: "Create immersive gaming experiences",
-      image:
-        "https://images.unsplash.com/photo-1556438064-2d7646166914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      color: "#FF6B6B",
-    },
-    {
-      title: "Secure Distribution",
-      oneLiner: "Protect and distribute your games safely",
-      image:
-        "https://images.unsplash.com/photo-1633265486064-086b219458ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      color: "#4ECDC4",
-    },
-    {
-      title: "Easy Monetization",
-      oneLiner: "Maximize your game's revenue potential",
-      image:
-        "https://images.unsplash.com/photo-1607863680198-23d4b2565df0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      color: "#FFA500",
-    },
-  ]
-  
-  
+  {
+    title: "Secure Distribution",
+    oneLiner: "Protect and distribute your games safely",
+    image: SecureDistrinution,
+    color: "#062548",
+  },
+  {
+    title: "Easy Monetization",
+    oneLiner: "Maximize your game's revenue potential",
+    image: Monetization,
+    color: "#E7A62B",
+  },
+  {
+    title: "Marketing & Publishing",
+    oneLiner: "Promote and publish your games effectively",
+    image: Markting,
+    color: "#D0D2D2",
+  },
+  {
+    title: "Custom Studio Solutions",
+    oneLiner: "End-to-end services designed specifically for game studios.",
+    image: GameDevelopment,
+    color: "#FF6B6B",
+  },
+  {
+    title: "Backend as a Service",
+    oneLiner: "Reliable backend infrastructure for your games",
+    image: Baas,
+    color: "#206284",
+  },
+  {
+    title: "Resource Marketplace",
+    oneLiner: "Access game assets, tools, and resources",
+    image: ResourceMarketplace,
+    color: "#E9BE42",
+  },
+  {
+    title: "NFT Integration",
+    oneLiner: "Integrate blockchain technology and NFTs",
+    image: NFT,
+    color: "#7FE0F4",
+  },
+  {
+    title: "Freelance Hub",
+    oneLiner: "Connect with talented game development professionals",
+    image: FreeLance,
+    color: "#29425D",
+  },
+];

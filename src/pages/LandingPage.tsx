@@ -1,20 +1,22 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "@/components/Landing/Hero";
-import {Service} from "@/components/Landing/Service";
 import SubscriptionPlans from "@/components/Landing/SubscriptionPlans";
 import Footer from "@/components/Footer";
+import ServicesWheel from "@/components/Landing/ServiceWhell";
+import OurTeam from "@/components/Landing/OurTeam";
 
 const LandingPage: React.FC = () => {
   return (
     <div className="bg-black text-white min-h-screen">
       <Navbar />
-      <div className="container mx-auto pt-14">
+      <div className="pt-14">
         <Hero />
-        <Service />
+        <ServicesWheel />
         <SubscriptionPlans />
+        <OurTeam />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
