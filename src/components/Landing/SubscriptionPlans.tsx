@@ -54,7 +54,7 @@ const plans: Plan[] = [
     price: "$49/month",
     description: "Studios or advanced developers scaling operations.",
     features: [
-      { text: "Host up to 10 games with 50GB storage each", included: true },
+      { text: "Host up to 15 games with 50GB storage each", included: true },
       { text: "Advanced piracy protection for all games", included: true },
       { text: "Access to global monetization tools", included: true },
       { text: "Unlimited NFT integration for unique game assets", included: true },
